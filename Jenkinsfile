@@ -13,15 +13,14 @@ pipeline{
         stage('unit testing'){
 
             steps{
-                sh "mvn dependency:resolve-plugins"
-                sh "mvn -e -X clean test"
+                sh "mvn clean test"
             }
         }
 
         stage('Integration testing'){
 
             steps{
-                sh "mvn -e -X verify -DskipUnitTests"
+                sh "mvn verify -DskipUnitTests"
             }
         }
 
