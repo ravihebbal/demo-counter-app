@@ -13,6 +13,7 @@ pipeline{
         stage('unit testing'){
 
             steps{
+                sh "mvn dependency:resolve-plugins"
                 sh "mvn -e -X clean test"
             }
         }
