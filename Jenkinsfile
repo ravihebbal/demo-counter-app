@@ -17,10 +17,10 @@ pipeline{
             }
         }
 
-        stage('Integration testing'){
+        stage('build'){
 
             steps{
-                sh "mvn verify -DskipUnitTests"
+                sh "mvn clean install"
             }
         }
 
