@@ -8,7 +8,13 @@ pipeline{
             steps{
                 git 'https://github.com/ravihebbal/demo-counter-app.git'
             }
+        }
 
+        stage('unit testing'){
+
+            steps{
+                sh "mvn clean test"
+            }
         }
     }
 }
